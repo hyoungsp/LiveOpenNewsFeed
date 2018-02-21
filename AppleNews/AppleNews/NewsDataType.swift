@@ -22,9 +22,9 @@ struct News: Codable {
 /// Data about the `Article`
 struct Article: Codable {
     var title: String
-    var author: String
+    var author: String?
     var description: String
-    var urlToImage: URL
+    var urlToImage: URL?
     var source: Source
     var url: URL
     var publishedAt: String
