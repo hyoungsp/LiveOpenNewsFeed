@@ -5,6 +5,6 @@
 
 2. All tabs including custom UI graphic circle
 
-![](images/tab1.png) <br>
-![](images/tab2.png) <br>
-![](images/count.png) <br>
+![](images/tab1.png) 
+![](images/tab2.png) 
+![](images/count.png) 
