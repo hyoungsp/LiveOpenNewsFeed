@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YLi-y9-0hE">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Apple News-->
+        <scene sceneID="a2c-KI-SoD">
+            <objects>
+                <tableViewController id="I2C-Dc-4ft" customClass="AppleNewsTableViewController" customModule="AppleNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0fB-eZ-v9P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" textLabel="Log-AN-87o" detailTextLabel="GKr-MS-Ds7" imageView="NVL-vr-hqQ" style="IBUITableViewCellStyleSubtitle" id="98x-6f-Xne" customClass="NewsTableViewCell" customModule="AppleNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="98x-6f-Xne" id="Net-iO-igd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Log-AN-87o">
+                                            <rect key="frame" x="61" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GKr-MS-Ds7">
+                                            <rect key="frame" x="61" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="smile" id="NVL-vr-hqQ">
+                                            <rect key="frame" x="16" y="6" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="emoji" destination="NVL-vr-hqQ" id="F2l-28-4fU"/>
+                                    <outlet property="subTitle" destination="GKr-MS-Ds7" id="5Db-cg-pdh"/>
+                                    <outlet property="title" destination="Log-AN-87o" id="C64-E0-MkR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="I2C-Dc-4ft" id="rPj-5G-yXL"/>
+                            <outlet property="delegate" destination="I2C-Dc-4ft" id="41F-2a-Itz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Apple News" largeTitleDisplayMode="always" id="IeO-dn-DK9"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="MEL-E9-dqT">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="pulledDownRefresh:" destination="I2C-Dc-4ft" eventType="valueChanged" id="AMM-9H-Q2V"/>
+                        </connections>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="refControl" destination="MEL-E9-dqT" id="s8O-GP-srn"/>
+                        <outlet property="tableView" destination="0fB-eZ-v9P" id="yiC-kd-gza"/>
+                        <segue destination="96E-ph-bJd" kind="show" identifier="AppleToDetail" id="6OG-Yg-6NF"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJk-RZ-VwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1334" y="-729"/>
+        </scene>
+        <!--Article Detail View Contoller-->
+        <scene sceneID="tTC-Ub-Xp8">
+            <objects>
+                <viewController id="96E-ph-bJd" customClass="ArticleDetailViewContoller" customModule="AppleNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g1s-H2-NRe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66S-uh-OsE">
+                                <rect key="frame" x="35" y="106" width="308" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnU-yX-coE">
+                                <rect key="frame" x="35" y="184" width="308" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Okz-dZ-OkD">
+                                <rect key="frame" x="35" y="242" width="308" height="368"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="8HX-Z8-WXk"/>
+                    </view>
+                    <connections>
+                        <outlet property="articleTitleLabel" destination="66S-uh-OsE" id="9Ob-id-JFG"/>
+                        <outlet property="contentText" destination="Okz-dZ-OkD" id="P7c-XZ-fZD"/>
+                        <outlet property="dateLabel" destination="vnU-yX-coE" id="TMn-cp-Iff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="neO-AQ-p4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="-740"/>
+        </scene>
+        <!--Apple News-->
+        <scene sceneID="Rf7-JO-lUL">
+            <objects>
+                <navigationController id="JSN-fh-Esc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Apple News" image="appleIcon" id="hJT-Db-EoO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qd0-DB-sLm">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.9727909482758621" green="0.72989910774123923" blue="0.82168976340019384" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="I2C-Dc-4ft" kind="relationship" relationship="rootViewController" id="lGS-ce-gB6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgv-ak-zCG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="447.19999999999999" y="-715.59220389805103"/>
+        </scene>
+        <!--Money News-->
+        <scene sceneID="TOa-mu-CDl">
+            <objects>
+                <tableViewController id="Zys-tO-bbA" customClass="MoneyNewsTableViewController" customModule="AppleNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q0u-Gv-4Fg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="moneyCell" textLabel="rd5-e6-NtB" detailTextLabel="a7x-my-buP" imageView="dsF-g2-3cf" style="IBUITableViewCellStyleSubtitle" id="aCW-Zf-R4a" customClass="MoneyTableViewCell" customModule="AppleNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aCW-Zf-R4a" id="qbe-Mm-qfZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rd5-e6-NtB">
+                                            <rect key="frame" x="61" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a7x-my-buP">
+                                            <rect key="frame" x="61" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="smile" id="dsF-g2-3cf">
+                                            <rect key="frame" x="16" y="6" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="emoji" destination="dsF-g2-3cf" id="p30-9Y-hGT"/>
+                                    <outlet property="subTitle" destination="a7x-my-buP" id="ic7-7C-Uqs"/>
+                                    <outlet property="title" destination="rd5-e6-NtB" id="BT2-W2-uo8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Zys-tO-bbA" id="sho-aF-9oI"/>
+                            <outlet property="delegate" destination="Zys-tO-bbA" id="XEW-R5-PNP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Money News" id="sT3-0z-tZ1"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="6jc-YI-LuN">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="pulledRefresh:" destination="Zys-tO-bbA" eventType="valueChanged" id="4ab-nd-aoW"/>
+                        </connections>
+                    </refreshControl>
+                    <connections>
+                        <outlet property="refControl" destination="6jc-YI-LuN" id="IVP-rl-E5I"/>
+                        <outlet property="tableView" destination="Q0u-Gv-4Fg" id="tUC-VO-x3h"/>
+                        <segue destination="LPu-dL-UFC" kind="show" identifier="MoneyToDetail" id="go7-YW-dNr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMD-TY-nGb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1396" y="0.0"/>
+        </scene>
+        <!--Apple Counter-->
+        <scene sceneID="v2c-3q-PuF">
+            <objects>
+                <viewController id="4h1-U3-8mV" customClass="AppleCounterViewController" customModule="AppleNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7ar-fL-NIR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LHL-XX-0Hx">
+                                <rect key="frame" x="72" y="158" width="230" height="230"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZsL-X1-nkK" customClass="CounterView" customModule="AppleNews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="230" height="230"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8h-cb-reh">
+                                                <rect key="frame" x="104.33333333333334" y="94.333333333333343" width="22" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="e8h-cb-reh" firstAttribute="centerY" secondItem="ZsL-X1-nkK" secondAttribute="centerY" id="JOS-RB-U81"/>
+                                            <constraint firstAttribute="height" constant="230" id="MZY-bc-ww1"/>
+                                            <constraint firstItem="e8h-cb-reh" firstAttribute="centerX" secondItem="ZsL-X1-nkK" secondAttribute="centerX" id="N5n-mj-6q9"/>
+                                            <constraint firstAttribute="width" constant="230" id="d6n-p8-dpU"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                                <color key="value" red="0.342616798" green="0.8484954267" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="counterColor">
+                                                <color key="value" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple News Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUa-Ho-rfg">
+                                <rect key="frame" x="72" y="523" width="230" height="53"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <color key="textColor" red="0.31953680510644544" green="0.038045787537887052" blue="0.54562126989389914" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LHL-XX-0Hx" firstAttribute="top" secondItem="zK8-29-hgO" secondAttribute="top" constant="114" id="6Nw-NN-Qaf"/>
+                            <constraint firstItem="EUa-Ho-rfg" firstAttribute="leading" secondItem="zK8-29-hgO" secondAttribute="leading" constant="72" id="K2N-sB-MDT"/>
+                            <constraint firstItem="LHL-XX-0Hx" firstAttribute="centerX" secondItem="7ar-fL-NIR" secondAttribute="centerX" id="Myq-jj-kyi"/>
+                            <constraint firstItem="EUa-Ho-rfg" firstAttribute="top" secondItem="LHL-XX-0Hx" secondAttribute="bottom" constant="135" id="dw3-6J-oCt"/>
+                            <constraint firstItem="zK8-29-hgO" firstAttribute="trailing" secondItem="EUa-Ho-rfg" secondAttribute="trailing" constant="73" id="nlc-Fb-brG"/>
+                            <constraint firstItem="zK8-29-hgO" firstAttribute="bottom" secondItem="EUa-Ho-rfg" secondAttribute="bottom" constant="153" id="saz-y9-6oY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zK8-29-hgO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Apple Counter" image="countIcon" id="9BP-3W-mhD"/>
+                    <connections>
+                        <outlet property="counterLabel" destination="e8h-cb-reh" id="vYd-5y-jYS"/>
+                        <outlet property="counterView" destination="ZsL-X1-nkK" id="k1Z-4o-nTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X4M-yV-2Im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-746.39999999999998" y="442.61083743842369"/>
+        </scene>
+        <!--Money News-->
+        <scene sceneID="DCs-rP-lr2">
+            <objects>
+                <navigationController id="YcR-Zp-t4Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Money News" image="moneyIcon" id="Fu5-e4-ZEs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="62c-qM-HPj">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80982139190000002" green="0.86757361509999997" blue="0.98020563469999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Zys-tO-bbA" kind="relationship" relationship="rootViewController" id="QGI-6I-VBW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="koF-VH-QCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="431" y="10"/>
+        </scene>
+        <!--Money Detail View Controller-->
+        <scene sceneID="pqv-I7-mGE">
+            <objects>
+                <viewController id="LPu-dL-UFC" customClass="MoneyDetailViewController" customModule="AppleNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lht-wU-D1g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwj-8d-k7A">
+                                <rect key="frame" x="29" y="117" width="319" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="re6-Os-BC5">
+                                <rect key="frame" x="29" y="184" width="319" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cgp-1T-snv">
+                                <rect key="frame" x="29" y="266" width="319" height="396"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="IAu-j7-tuq"/>
+                    </view>
+                    <connections>
+                        <outlet property="articleTitleLabel" destination="kwj-8d-k7A" id="mdV-Wf-Pld"/>
+                        <outlet property="contentText" destination="cgp-1T-snv" id="cc7-VY-322"/>
+                        <outlet property="dateLabel" destination="re6-Os-BC5" id="RSh-E3-OUl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TnQ-Oc-EyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2188" y="0.73891625615763545"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="f1d-46-Vx2">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="YLi-y9-0hE" customClass="ViewController" customModule="AppleNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Zp7-xz-s9d"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dOM-Eh-52G">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="JSN-fh-Esc" kind="relationship" relationship="viewControllers" id="UMs-uf-l7d"/>
+                        <segue destination="YcR-Zp-t4Y" kind="relationship" relationship="viewControllers" id="yTz-Q1-fHv"/>
+                        <segue destination="4h1-U3-8mV" kind="relationship" relationship="viewControllers" id="nMz-1s-M52"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TU2-OC-W7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-982" y="-414"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="appleIcon" width="30" height="30"/>
+        <image name="countIcon" width="30" height="30"/>
+        <image name="moneyIcon" width="30" height="30"/>
+        <image name="smile" width="30" height="30"/>
+    </resources>
+</document>
