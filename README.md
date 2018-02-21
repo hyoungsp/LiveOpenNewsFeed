@@ -1,3 +1,3 @@
 # LiveOpenNewsFeed
 
-![](images/layout.png)
+![](images/layouts.png)
