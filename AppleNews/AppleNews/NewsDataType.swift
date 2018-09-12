@@ -6,6 +6,7 @@
 //  Copyright © 2018 stanleypark. All rights reserved.
 //
 
+/// custom struct for Apple and Money news table
 import Foundation
 
 /// Note:🤔

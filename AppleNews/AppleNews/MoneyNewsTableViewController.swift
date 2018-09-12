@@ -35,7 +35,8 @@ class MoneyNewsTableViewController: UIViewController, UITableViewDelegate, UITab
         print(self.urlString)
         
         
-        // The data is available in this closure through the `news` variable. Copy the `news` to a property of the view controller so that it can persist beyond the closure block.
+        // The data is available in this closure through the `news` variable.
+        // Copy the `news` to a property of the view controller so that it can persist beyond the closure block.
         self.getNews(url: urlString) { (news) in
             
             self.news = news
@@ -97,7 +98,7 @@ class MoneyNewsTableViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.blue]
+        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.blue] // for the sake of compatibility with Obj-C
         self.navigationController?.navigationBar.titleTextAttributes = textAttributes
         self.navigationController?.navigationBar.backgroundColor = UIColor.green
     }
@@ -141,7 +142,6 @@ class MoneyNewsTableViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell")!
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "moneyCell", for: indexPath) as? MoneyTableViewCell  else {
             fatalError("The dequeued cell is not an instance of MealTableViewCell.")
@@ -166,6 +166,7 @@ class MoneyNewsTableViewController: UIViewController, UITableViewDelegate, UITab
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         let articleDate = dateFormatter.date(from:  (self.news?.articles[indexPath.row].publishedAt)!)
         
+        // Happy or Not Happy Emoji - split - if the news is within 12 hours or not
         if (articleDate?.timeIntervalSinceNow.isLess(than: -12*60*60))! {
             cell.imageView?.image = #imageLiteral(resourceName: "smile")
         } else {

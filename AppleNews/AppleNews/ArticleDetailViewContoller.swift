@@ -9,9 +9,8 @@
 import UIKit
 import SafariServices
 
-//
-// - Attributions: https://www.hackingwithswift.com/example-code/uikit/how-to-use-sfsafariviewcontroller-to-show-web-pages-in-your-app
-//
+
+// - Reference: https://www.hackingwithswift.com/example-code/uikit/how-to-use-sfsafariviewcontroller-to-show-web-pages-in-your-app
 
 class ArticleDetailViewContoller: UIViewController {
     
